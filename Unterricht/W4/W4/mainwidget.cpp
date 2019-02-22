@@ -2,9 +2,11 @@
 
 #include <QDebug>
 #include <QMouseEvent>
+#include <QMediaPlayer>
 
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent)
 {
+    this->test = new QMediaPlayer();
 }
 
 MainWidget::~MainWidget()

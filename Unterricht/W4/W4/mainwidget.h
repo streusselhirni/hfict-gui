@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+class QMouseEvent;
+
 class MainWidget : public QWidget
 {
     Q_OBJECT
