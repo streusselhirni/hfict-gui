@@ -5,14 +5,16 @@
 
 class MainWidget;
 
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
+class MainWindow : public QMainWindow {
+Q_OBJECT
 private:
-    MainWidget *mw;
+    MainWidget* mainWidget;
+
+    void setupMenu();
+
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit MainWindow(QWidget* parent = nullptr);
+    ~MainWindow() override;
 };
 
 #endif // MAINWINDOW_H
