@@ -4,7 +4,8 @@
 #include <QComboBox>
 #include <QPushButton>
 #include "BallonfahrtSimulator.h"
-#include "canvas.h"
+#include "Animation.h"
+#include "Canvas.h"
 
 void BallonfahrtSimulator::setupLayout()
 {
@@ -44,6 +45,12 @@ void BallonfahrtSimulator::setupEvents()
 
     connect(btnStartAnimation, SIGNAL(toggled(bool)),
             this, SLOT(buttonToggled()));
+
+    connect(btnNextFrame, SIGNAL(clicked(bool)),
+            canvas, SLOT(moveBallon()));
+
+    connect(animation, SIGNAL(animationEvent()),
+            canvas, SLOT(moveBallon()));
 }
 
 void BallonfahrtSimulator::buttonToggled()
@@ -52,22 +59,29 @@ void BallonfahrtSimulator::buttonToggled()
     {
         btnStartAnimation->setText("Stoppe Animation");
         qDebug() << "Resume Animation";
+        animation->resume();
     }
     else
     {
         btnStartAnimation->setText("Starte Animation");
         qDebug() << "Suspend Animation";
+        animation->suspend();
     }
 }
 
 BallonfahrtSimulator::BallonfahrtSimulator(QWidget *parent)
         : QWidget(parent)
 {
+    this->animation = new Animation();
     setupLayout();
     setupEvents();
 }
 
 BallonfahrtSimulator::~BallonfahrtSimulator()
 {
-
+    delete canvas;
+    delete cbb;
+    delete btnNextFrame;
+    delete btnStartAnimation;
+    delete animation;
 }

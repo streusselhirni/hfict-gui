@@ -14,7 +14,12 @@ find_package(Qt5Multimedia REQUIRED)
 
 set(SOURCE_FILES
         main.cpp
-        BallonfahrtSimulator.cpp BallonfahrtSimulator.h Canvas.cpp Canvas.h)
+        BallonfahrtSimulator.cpp
+        BallonfahrtSimulator.h
+        Canvas.cpp
+        Canvas.h
+        Animation.cpp
+        Animation.h)
 
 add_executable(Pruefung2 ${SOURCE_FILES})
 target_link_libraries(Pruefung2 Qt5::Widgets Qt5::Multimedia)

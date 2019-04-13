@@ -1,4 +1,4 @@
-#include "ballonfahrtsimulator.h"
+#include "BallonfahrtSimulator.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

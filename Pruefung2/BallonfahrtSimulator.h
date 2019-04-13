@@ -9,6 +9,8 @@ class QComboBox;
 
 class QPushButton;
 
+class Animation;
+
 class BallonfahrtSimulator : public QWidget
 {
 Q_OBJECT
@@ -18,6 +20,7 @@ private:
     QComboBox  * cbb;
     QPushButton* btnNextFrame;
     QPushButton* btnStartAnimation;
+    Animation  * animation;
 
 public:
     void setupLayout();
