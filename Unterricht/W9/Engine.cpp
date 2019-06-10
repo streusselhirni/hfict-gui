@@ -2,7 +2,6 @@
 #include <QtMath>
 #include <QPainter>
 
-void Engine::paintEvent(QPaintEvent* e)
 {
     // P1 - Calculate Center Point of the Flywheel
     QPoint p1(static_cast<int>(this->width() * 0.5), static_cast<int>(this->height() * 0.65));
